@@ -1,5 +1,6 @@
-# MettingApp
+# meeting app
 A sample example of nodejs(dockerized container) and mysql(dockerized container).
+
 
 ## Run
 ```
@@ -9,4 +10,4 @@ This will start 2 dockerized container mysql and nodejs.
 
 **nodejs container** will connect to **mysql** running inside the container.
 
-The app will be running on http://localhost:3000
+The app will be running on http://localhost:5001

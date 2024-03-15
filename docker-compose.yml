@@ -2,6 +2,7 @@ version: "3.8"
 services:
   db:
     build: ./db
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
       - db_data:/var/lib/mysql
     environment:
@@ -14,6 +15,7 @@ services:
     build: ./web
     volumes:
       - ./web:/app
+      - /app/node_modules
     environment:
       MYSQL_DATABASE: test
       MYSQL_USER: root
@@ -23,6 +25,6 @@ services:
       - "5001:5000"
     depends_on:
       - db
-    # restart: on-failure
+    restart: on-failure
 volumes:
   db_data:

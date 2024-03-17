@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meeting Room Booking</title>
+  <link rel="stylesheet" href="meeting.css">
+  <script>
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+  
+    today = yyyy + '-' + mm + '-' + dd;
+    var maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 5);
+    var maxDD = String(maxDate.getDate()).padStart(2, '0');
+    var maxMM = String(maxDate.getMonth() + 1).padStart(2, '0');
+    var maxYYYY = maxDate.getFullYear();
+    maxDate = maxYYYY + '-' + maxMM + '-' + maxDD;
+
+    function deleteSelectedRows() {
+      var checkboxes = document.getElementsByClassName('delete-checkbox');
+      var table = document.getElementById('booking-table').getElementsByTagName('tbody')[0];
+      var rowsToDelete = [];
+
+      for (var i = checkboxes.length - 1; i >= 0; i--) {
+        if (checkboxes[i].checked) {
+          rowsToDelete.push(i);
+        }
+      }
+
+      rowsToDelete.forEach(function (index) {
+        table.deleteRow(index);
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>BOOKING LIST </h1>
+  <button onclick="deleteSelectedRows()">Delete</button>
+  <table class="booking-list" id="booking-table">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Booking Date</th>
+        <th>Start time - End time</th>
+        <th>Content</th>
+        <th>Booker</th>
+        <th>Room Name</th>
+        <th class="action-column">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>22-02-2024</td>
+        <td>08:00 - 09:00</td>
+        <td>Meeting with A</td>
+        <td>Nguyen Hai Duong</td>
+        <td>Hoang Sa</td>
+        <td class="action-column"><input type="checkbox" name="delete-row"></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>23-02-2024</td>
+        <td>10:00 - 11:00</td>
+        <td>Meeting with B</td>
+        <td>Nguyen Hai Duong</td>
+        <td>Truong Sa</td>
+        <td class="action-column"><input type="checkbox" name="delete-row"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+  
+    today = yyyy + '-' + mm + '-' + dd;
+    var maxDate = new Date();
+    maxDate.setDate(maxDate.getDate() + 5);
+    var maxDD = String(maxDate.getDate()).padStart(2, '0');
+    var maxMM = String(maxDate.getMonth() + 1).padStart(2, '0');
+    var maxYYYY = maxDate.getFullYear();
+    maxDate = maxYYYY + '-' + maxMM + '-' + maxDD;
+  </script>
+
+  <h1>CREATE A BOOKING</h1>
+  <form action="https://endpoint.example/api/meeting" method="post">
+    
+    <table>
+      <tr>
+        <td><label for="booking-date">Booking Date:</label></td>
+        <td><input type="date" id="booking-date" name="booking-date"></td>
+      </tr>
+      <tr>
+        <td><label for="start-time">Start Time:</label></td>
+        <td><input type="time" id="start-time" name="start-time"></td>
+      </tr>
+      <tr>
+        <td><label for="end-time">End Time:</label></td>
+        <td><input type="time" id="end-time" name="end-time"></td>
+      </tr>
+      <tr>
+        <td><label for="content">Content:</label></td>
+        <td><textarea id="content" name="content"></textarea></td>
+      </tr>
+      <tr>
+        <td><label for="booker">Booker:</label></td>
+        <td><input type="text" id="booker" name="booker"></td>
+      </tr>
+      <tr>
+        <td><label for="room-name">Room Name:</label></td>
+        <td>
+          <select id="room-name" name="room-name">
+            <option value="Hoang Sa">Hoang Sa</option>
+            <option value="Truong Sa">Truong Sa</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+  
+</body>
+</html>

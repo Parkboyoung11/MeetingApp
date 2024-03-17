@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #0000cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.login-section {
+    float: right;
+}
+
+nav {
+    background-color: #0000ff;
+    overflow: hidden;
+}
+
+nav button {
+    background-color: #0000ff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #0066ff;
+}
+
+main {
+    padding: 20px;
+}
+
+.slogan {
+    font-size: 30px;
+}
+
+.welcome-section {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #0000cc;
+    color: white;
+    text-align: right;
+}
+
+.welcome-section button {
+    background-color: #0000ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.welcome-section button:hover {
+    background-color: #0066ff;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    width:auto;
+}
+.user-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: auto;
+}
+
+.user-list-table th, .user-list-table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style cho nút Edit và Save */
+.user-list-table button {
+    margin-right: 5px;
+    cursor: pointer;
+}

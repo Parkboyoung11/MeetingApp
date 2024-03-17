@@ -1,0 +1,38 @@
+.booking-list {
+  max-width: 1200px;
+  text-align: left;
+}
+
+.booking-list thead {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.booking-list tbody {
+  font-size: 14px;
+}
+
+.booking-list thead tr, .booking-list tbody tr {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr) 1fr; /* Thêm cột "Action" vào đây */
+}
+
+.booking-list tr:last-child {
+  border-bottom: 1px solid black;
+}
+
+.booking-list tr td:nth-child(6), .booking-list th:nth-child(6) {
+  border-right: 1px solid black;
+}
+
+.booking-list th, .booking-list td {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.booking-list .action-column {
+  white-space: nowrap;
+  border-right: 1px solid black; /* Thêm biên bên phải cho cột "Action" */
+}
